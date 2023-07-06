@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const fileUpload = require("express-fileupload");
 const combineRouters = require("./routers/index.js");
+require("dotenv").config();
 
 const app = express();
 
@@ -32,4 +33,4 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(5000, () => console.log(`Server is running on ${5000} port`));
+app.listen(process.env.PORT, () => console.log(`Server is running on ${process.env.PORT} port`));
